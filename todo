@@ -1,6 +1,6 @@
 addition(/subtraction use minus everywhere):
-0/n + 0/m = 0
-0/n + i/m = i/m
+*0/n + 0/m = 0
+*0/n + i/m = i/m
 i/n + j/n = i+j/n
 i/n + j/m = (i*m) + (j*n)/(n*m)
 5/10 + 10/10 = 15/10 = 3/2
