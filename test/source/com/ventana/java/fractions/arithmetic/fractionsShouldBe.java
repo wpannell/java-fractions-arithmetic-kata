@@ -34,12 +34,16 @@ public class fractionsShouldBe {
   @Test
   public void theFractionWhenZeroIsAddedToAnyFraction() {
     assertThat(fractions(0,100,1,99), is(equalTo(new int[]{1,99})));
-    assertThat(fractions(1,777, 0,396), is(equalTo(new int[]{1,777})));
+    assertThat(fractions(1,777,0,396), is(equalTo(new int[]{1,777})));
   }
 
   @Test
   public void theSumOfTheNumeratorsWhenTheDenominatorsAreEqual() {
     assertThat(fractions(4,7,11,7), is(equalTo(new int[]{15,7})));
-//    assertThat(fractions(10,20, 30,20), is(equalTo(new int[]{1,777})));
+  }
+
+  @Test
+  public void reducedWhenTheSumHasAGreatestCommonDivisor() {
+    assertThat(fractions(10,20, 30,20), is(equalTo(new int[]{2,1})));
   }
 }
