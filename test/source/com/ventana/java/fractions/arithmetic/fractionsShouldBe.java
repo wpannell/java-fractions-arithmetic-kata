@@ -46,4 +46,10 @@ public class fractionsShouldBe {
   public void reducedWhenTheSumHasAGreatestCommonDivisor() {
     assertThat("fractions(10,20,30,20)", fractions(10,20,30,20), is(equalTo(new int[]{2,1})));
   }
+
+  @Test
+  public void crossMultipliedWhenTheDenominatorsAreUnequal() {
+    assertThat("fractions(4,7,11,13)",
+        fractions(4,7,11,13), is(equalTo(new int[]{129,91})));
+  }
 }
