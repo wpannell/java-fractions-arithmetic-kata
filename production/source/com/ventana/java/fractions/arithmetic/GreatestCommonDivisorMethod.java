@@ -1,4 +1,4 @@
-package com.ventana.java.fractions.aithmetic;
+package com.ventana.java.fractions.arithmetic;
 
 public class GreatestCommonDivisorMethod {
   public int gcdOf(int... factors) {

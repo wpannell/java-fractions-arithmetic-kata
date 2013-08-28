@@ -1,6 +1,5 @@
 package com.ventana.java.fractions.arithmetic;
 
-import com.ventana.java.fractions.aithmetic.GreatestCommonDivisorMethod;
 import org.junit.Before;
 import org.junit.Test;
 

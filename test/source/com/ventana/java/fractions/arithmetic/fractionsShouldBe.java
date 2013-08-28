@@ -1,105 +1,57 @@
 package com.ventana.java.fractions.arithmetic;
 
-import com.ventana.java.fractions.aithmetic.GreatestCommonDivisorMethod;
-import org.junit.Before;
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class FractionsShouldBe {
-  private static final int[] ZERO = new int[]{0, 1};
-
-  private Fraction fractions;
-
-  @Before
-  public void instantiateMethodObject(){
-    fractions = new Fraction();
-  }
+  private static final Fraction zeroOver9 = new Fraction(0, 9);
+  private static final Fraction zeroOver10 = new Fraction(0, 10);
+  private static final Fraction zeroOver100 = new Fraction(0,100);
+  private static final Fraction oneOver199 = new Fraction(1,199);
+  private static final Fraction fourOver7 = new Fraction(4, 7);
+  private static final Fraction elevenOver7 = new Fraction(11, 7);
+  private static final Fraction fifteenOver7 = new Fraction(15, 7);
+  private static final Fraction tenOver20 = new Fraction(10, 20);
+  private static final Fraction thirtyOver20 = new Fraction(30, 20);
+  private static final Fraction twoOver1 = new Fraction(2, 1);
+  private static final Fraction elevenOver13 = new Fraction(11, 13);
+  private static final Fraction oneTwentyNineOver91 = new Fraction(129, 91);
+  private static final Fraction fiveOver10 = new Fraction(5, 10);
+  private static final Fraction tenOver10 = new Fraction(10, 10);
+  private static final Fraction threeOver2 = new Fraction(3, 2);
+  private static final Fraction twoOver5 = new Fraction(2, 5);
+  private static final Fraction twoOver10 = new Fraction(2, 10);
+  private static final Fraction threeOver5 = new Fraction(3, 5);
 
   @Test
   public void zeroWhenTwoZeroFractionsAreAdded() {
-    assertThat("addition(0,9,0,10)", fractions.addition(0, 9, 0, 10), is(ZERO));
+    assertThat("0/9 + 0/10)", zeroOver9.plus(zeroOver10), is(Fraction.ZERO));
   }
 
   @Test
   public void theFractionWhenZeroIsAddedToAnyFraction() {
-    assertThat("addition(0,100,1,99)",
-        fractions.addition(0, 100, 1, 99), is(equalTo(new int[]{1,99})));
-
-    assertThat("addition(1,777,0,396)",
-        fractions.addition(1, 777, 0, 396), is(equalTo(new int[]{1,777})));
+    assertThat("0/100 + 1/199)", zeroOver100.plus(oneOver199), is(oneOver199));
+    assertThat("1/199 + 0/100)", oneOver199.plus(zeroOver100), is(oneOver199));
   }
 
   @Test
   public void theSumOfTheNumeratorsWhenTheDenominatorsAreEqual() {
-    assertThat("addition(4,7,11,7)",
-        fractions.addition(4, 7, 11, 7), is(equalTo(new int[]{15,7})));
+    assertThat("4/7 + 11/7)", fourOver7.plus(elevenOver7), is(fifteenOver7));
   }
 
   @Test
   public void reducedWhenTheSumHasAGreatestCommonDivisor() {
-    assertThat("addition(10,20,30,20)",
-        fractions.addition(10, 20, 30, 20), is(equalTo(new int[]{2,1})));
+    assertThat("10/20 + 30/20)", tenOver20.plus(thirtyOver20), is(twoOver1));
   }
 
   @Test
   public void crossMultipliedWhenTheDenominatorsAreUnequal() {
-    assertThat("addition(4,7,11,13)",
-        fractions.addition(4, 7, 11, 13), is(equalTo(new int[]{129,91})));
+    assertThat("4/7 + 11/13)", fourOver7.plus(elevenOver13),
+        is(oneTwentyNineOver91));
 
-    assertThat("addition(5,10,10,10)",
-        fractions.addition(5, 10, 10, 10), is(equalTo(new int[]{3,2})));
-
-    assertThat("addition(2,5,2,10)",
-        fractions.addition(2, 5, 2, 10), is(equalTo(new int[]{3,5})));
-  }
-
-  public class Fraction {
-    public final int numerator;
-    public final int denominator;
-
-    private Fraction(){ this(0, 1);}
-
-    public Fraction(int numerator, int denominator) {
-      this.numerator = numerator;
-      this.denominator = denominator;
-    }
-
-    public Fraction add(Fraction fraction) {
-      if(fraction.numerator == 0) return reduce(fraction);
-      if(numerator == 0) return reduce(this);
-      if(denominator == fraction.denominator)
-        return reduce(new Fraction(numerator + fraction.numerator, denominator));
-
-      return reduce(new Fraction(
-          (numerator * fraction.denominator) + (fraction.numerator * denominator), denominator * fraction.denominator));
-    }
-
-    public int[] addition(final int numerator1, final int denominator1,
-          final int numerator2, final int denominator2) {
-      if(numerator1 == 0) return reduce(numerator2, denominator2);
-      if(numerator2 == 0) return reduce(numerator1, denominator1);
-      if(denominator1 == denominator2)
-        return reduce(numerator1 + numerator2, denominator1);
-
-      return reduce((numerator1*denominator2) + (numerator2*denominator1),
-          denominator1 * denominator2);
-    }
-
-    private Fraction reduce(final Fraction fraction) {
-      if(fraction.numerator == 0) return new Fraction();
-      final int gcd =
-          new GreatestCommonDivisorMethod().gcdOf(fraction.numerator, fraction.denominator);
-      return new Fraction(fraction.numerator /gcd, fraction.denominator /gcd);
-    }
-
-    private int[] reduce(final int numerator, final int denominator) {
-      if(numerator == 0) return ZERO;
-      final int gcd =
-          new GreatestCommonDivisorMethod().gcdOf(numerator, denominator);
-      return new int[]{numerator/gcd, denominator/gcd};
-    }
+    assertThat("5/10 + 10/10)", fiveOver10.plus(tenOver10), is(threeOver2));
+    assertThat("2/5 + 2/10)", twoOver5.plus(twoOver10), is(threeOver5));
   }
 }
