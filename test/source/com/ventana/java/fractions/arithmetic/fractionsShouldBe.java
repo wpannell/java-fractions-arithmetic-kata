@@ -16,7 +16,8 @@ public class fractionsShouldBe {
     if(numerator2 == 0) return reduce(numerator1, denominator1);
     if(denominator1 == denominator2)
       return reduce(numerator1 + numerator2, denominator1);
-    return ZERO;
+    return reduce((numerator1*denominator2) + (numerator2*denominator1),
+        denominator1 * denominator2);
   }
 
   private int[] reduce(final int numerator, final int denominator) {
