@@ -7,6 +7,31 @@ addition(/subtraction use minus everywhere):
 * 5/10 + 10/10 = 15/10 = 3/2
 *2/5 + 2/10 = 3/5
 
+-i/-n = -i/n
+i/-n = -i/n
+-i/-n = i/n
+
+
+-(0/n) = 0
+-(i/n) = -i/n
+-(-i/n) = i/n
+-(i/-n) = i/n
+
+i/n + -j/n = i-j/n
+i/n + j/-n = i-j/n
+
+-i/n + j/n = j-i/n
+i/-n + j/n = j-i/n
+
+-i/n + -j/n = -i-j/n
+-i/-n + -j/-n = i+j/n
+
+i/n + j/-n = i-j/n
+
+i/n + -j/m = (i*m) + (-j*n)/(n*m)
+-i/n + j/m = (-i*m) + (j*n)/(n*m)
+-i/n + -j/m = (-i*m) + (-j*n)/(n*m)
+
 multiplication:
 0/n * 0/m = 0
 i/n * m/m = i/n

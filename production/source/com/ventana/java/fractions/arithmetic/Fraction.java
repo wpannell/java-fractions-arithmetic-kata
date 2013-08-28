@@ -10,16 +10,6 @@ public class Fraction {
     this.denominator = denominator;
   }
 
-  public Fraction minus(final Fraction fraction) {
-    if(fraction.numerator == 0) return reduce(this);
-    if(numerator == 0) return reduce(fraction);
-    if(denominator == fraction.denominator)
-      return reduce(new Fraction(numerator + fraction.numerator, denominator));
-
-    return reduce(new Fraction(
-        (numerator * fraction.denominator) + (fraction.numerator * denominator), denominator * fraction.denominator));
-  }
-
   public Fraction plus(final Fraction fraction) {
     if(fraction.numerator == 0) return reduce(this);
     if(numerator == 0) return reduce(fraction);
