@@ -9,7 +9,7 @@ addition(/subtraction use minus everywhere):
 
 *-i/n = -i/n
 *i/-n = -i/n
--i/-n = i/n
+*-i/-n = i/n
 
 
 -(0/n) = 0

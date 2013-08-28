@@ -24,4 +24,10 @@ public class FractionNegationShouldBe {
     assertThat("-10/-11 = 10/11", new Fraction(-10, -11),
         is(equalTo(new Fraction(10,11))));
   }
+
+  @Test
+  public void zeroWhenTheNumeratorIs0andTheDenominatorIsNegative() {
+    assertThat("0/-11 = 0", new Fraction(0, -11),
+        is(equalTo(Fraction.ZERO)));
+  }
 }
