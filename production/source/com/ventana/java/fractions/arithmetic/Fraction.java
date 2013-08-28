@@ -4,14 +4,18 @@ public class Fraction {
   public static final Fraction ZERO = new Fraction(0,1);
   public final int numerator;
   public final int denominator;
+  public final int numeratorNorm;
+  public final int denominatorNorm;
 
   public Fraction(final int numerator, final int denominator) {
     this.numerator = numerator;
     this.denominator = denominator;
+    this.numeratorNorm = normalize(numerator,denominator)[0];
+    this.denominatorNorm = normalize(numerator,denominator)[1];
   }
 
   public Fraction negate() {
-    return new Fraction(-numerator, denominator);
+    return new Fraction(-numeratorNorm, denominatorNorm);
   }
 
   public Fraction plus(final Fraction fraction) {
@@ -36,10 +40,18 @@ public class Fraction {
 
     Fraction fraction = (Fraction) o;
 
-    if (denominator != fraction.denominator) return false;
-    if (numerator != fraction.numerator) return false;
+    if (denominatorNorm != fraction.denominatorNorm) return false;
+    if (numeratorNorm != fraction.numeratorNorm) return false;
 
     return true;
+  }
+
+  private int[] normalize(final int numerator, final int denominator) {
+    if(numerator < 0 &&  denominator < 0) return new int[]{-numerator,
+        -denominator};
+    if(denominator < 0)
+      return new int[]{-numerator, -denominator};
+    return new int[]{numerator, denominator};
   }
 
   private Fraction reduce(final Fraction fraction) {
