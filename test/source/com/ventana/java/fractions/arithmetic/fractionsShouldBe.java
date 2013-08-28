@@ -7,7 +7,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class fractionsShouldBe {
+public class FractionsShouldBe {
   private static final int[] ZERO = new int[]{0, 1};
 
   private int[] fractions(final int numerator1, final int denominator1,
