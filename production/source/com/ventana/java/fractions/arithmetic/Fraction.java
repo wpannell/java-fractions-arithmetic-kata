@@ -10,6 +10,10 @@ public class Fraction {
     this.denominator = denominator;
   }
 
+  public Fraction negate() {
+    return null;
+  }
+
   public Fraction plus(final Fraction fraction) {
     if(fraction.numerator == 0) return reduce(this);
     if(numerator == 0) return reduce(fraction);
@@ -44,5 +48,4 @@ public class Fraction {
         new GreatestCommonDivisorMethod().gcdOf(fraction.numerator, fraction.denominator);
     return new Fraction(fraction.numerator /gcd, fraction.denominator /gcd);
   }
-
 }
