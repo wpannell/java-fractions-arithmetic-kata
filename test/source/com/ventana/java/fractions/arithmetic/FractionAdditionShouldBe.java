@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class FractionsShouldBe {
+public class FractionAdditionShouldBe {
   private static final Fraction zeroOver9 = new Fraction(0, 9);
   private static final Fraction zeroOver10 = new Fraction(0, 10);
   private static final Fraction zeroOver100 = new Fraction(0,100);
