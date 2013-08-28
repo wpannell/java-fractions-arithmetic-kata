@@ -57,19 +57,24 @@ public class FractionsShouldBe {
   }
 
   public class Fraction {
-    public final int num;
-    public final int den;
+    public final int numerator;
+    public final int denominator;
 
     private Fraction(){ this(0, 1);}
 
-    public Fraction(int num, int den) {
-      this.num = num;
-      this.den = den;
+    public Fraction(int numerator, int denominator) {
+      this.numerator = numerator;
+      this.denominator = denominator;
     }
 
     public Fraction add(Fraction fraction) {
-      final int[] sum = addition(num, den, fraction.num, fraction.den);
-      return new Fraction(sum[0], sum[1]);
+      if(fraction.numerator == 0) return reduce(fraction);
+      if(numerator == 0) return reduce(this);
+      if(denominator == fraction.denominator)
+        return reduce(new Fraction(numerator + fraction.numerator, denominator));
+
+      return reduce(new Fraction(
+          (numerator * fraction.denominator) + (fraction.numerator * denominator), denominator * fraction.denominator));
     }
 
     public int[] addition(final int numerator1, final int denominator1,
@@ -81,6 +86,13 @@ public class FractionsShouldBe {
 
       return reduce((numerator1*denominator2) + (numerator2*denominator1),
           denominator1 * denominator2);
+    }
+
+    private Fraction reduce(final Fraction fraction) {
+      if(fraction.numerator == 0) return new Fraction();
+      final int gcd =
+          new GreatestCommonDivisorMethod().gcdOf(fraction.numerator, fraction.denominator);
+      return new Fraction(fraction.numerator /gcd, fraction.denominator /gcd);
     }
 
     private int[] reduce(final int numerator, final int denominator) {
