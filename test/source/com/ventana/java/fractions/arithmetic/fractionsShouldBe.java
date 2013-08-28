@@ -11,11 +11,11 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class FractionsShouldBe {
   private static final int[] ZERO = new int[]{0, 1};
 
-  private Fractions fractions;
+  private Fraction fractions;
 
   @Before
   public void instantiateMethodObject(){
-    fractions = new Fractions();
+    fractions = new Fraction();
   }
 
   @Test
@@ -56,7 +56,22 @@ public class FractionsShouldBe {
         fractions.addition(2, 5, 2, 10), is(equalTo(new int[]{3,5})));
   }
 
-  public class Fractions{
+  public class Fraction {
+    public final int num;
+    public final int den;
+
+    private Fraction(){ this(0, 1);}
+
+    public Fraction(int num, int den) {
+      this.num = num;
+      this.den = den;
+    }
+
+    public Fraction add(Fraction fraction) {
+      final int[] sum = addition(num, den, fraction.num, fraction.den);
+      return new Fraction(sum[0], sum[1]);
+    }
+
     public int[] addition(final int numerator1, final int denominator1,
           final int numerator2, final int denominator2) {
       if(numerator1 == 0) return reduce(numerator2, denominator2);
