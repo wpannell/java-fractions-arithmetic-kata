@@ -1,5 +1,6 @@
 package com.ventana.java.fractions.arithmetic;
 
+import com.ventana.java.fractions.aithmetic.GreatestCommonDivisorMethod;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -9,14 +10,18 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class fractionsShouldBe {
   private static final int[] ZERO = new int[]{0, 1};
 
-  private int[] fractions(int... nums) {
-    if(nums[0] == 0 && nums[2] == 0)
-      return ZERO;
-    if(nums[0] == 0)
-      return new int[]{nums[2], nums[3]};
-    if(nums[2] == 0)
-      return new int[]{nums[0], nums[1]};
+  private int[] fractions(int numerator1, int denominator1,
+        int numerator2, int denominator2) {
+    if(numerator1 == 0 && numerator2 == 0) return ZERO;
+    if(numerator1 == 0) return reduce(numerator2, denominator2);
+    if(numerator2 == 0) return reduce(numerator1, denominator1);
     return ZERO;
+  }
+
+  private int[] reduce(int numerator, int denominator) {
+    final int gcd =
+        new GreatestCommonDivisorMethod().gcdOf(numerator, denominator);
+    return new int[]{numerator/gcd, denominator/gcd};
   }
 
   @Test
