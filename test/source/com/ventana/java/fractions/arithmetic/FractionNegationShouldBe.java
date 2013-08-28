@@ -9,7 +9,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class FractionNegationShouldBe {
   @Test
   public void negativeWhenTheNumeratorIsNegative() {
-    assertThat("-i/n = -(i/n)", new Fraction(-11, 10),
+    assertThat("-i/n = -(i/n)", new Fraction(-10, 11),
         is(equalTo(new Fraction(10,11).negate())));
   }
 }

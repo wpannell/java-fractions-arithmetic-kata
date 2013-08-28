@@ -11,7 +11,7 @@ public class Fraction {
   }
 
   public Fraction negate() {
-    return null;
+    return new Fraction(-numerator, denominator);
   }
 
   public Fraction plus(final Fraction fraction) {
