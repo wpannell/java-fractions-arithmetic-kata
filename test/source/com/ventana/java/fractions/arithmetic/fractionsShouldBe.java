@@ -14,6 +14,8 @@ public class fractionsShouldBe {
         final int numerator2, final int denominator2) {
     if(numerator1 == 0) return reduce(numerator2, denominator2);
     if(numerator2 == 0) return reduce(numerator1, denominator1);
+    if(denominator1 == denominator2)
+      return reduce(numerator1 + numerator2, denominator1);
     return ZERO;
   }
 
@@ -36,7 +38,7 @@ public class fractionsShouldBe {
   }
 
   @Test
-  public void theSumOfTheNumeratorsWhenTheDenomiatorsAreEqual() {
+  public void theSumOfTheNumeratorsWhenTheDenominatorsAreEqual() {
     assertThat(fractions(4,7,11,7), is(equalTo(new int[]{15,7})));
 //    assertThat(fractions(10,20, 30,20), is(equalTo(new int[]{1,777})));
   }
