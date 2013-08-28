@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Infinitest" name="Infinitest">
+      <configuration />
+    </facet>
+  </component>
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/production/classes" />
     <output-test url="file://$MODULE_DIR$/test/classes" />
@@ -10,7 +15,7 @@
     <content url="file://$MODULE_DIR$/test">
       <sourceFolder url="file://$MODULE_DIR$/test/source" isTestSource="true" />
     </content>
-    <orderEntry type="jdk" jdkName="1.8 Build b100 https://jdk8.java.net/download.html " jdkType="JavaSDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="TEST" name="test library" level="project" />
   </component>
