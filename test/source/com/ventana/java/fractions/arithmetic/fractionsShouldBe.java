@@ -10,6 +10,12 @@ public class fractionsShouldBe {
   private static final int[] ZERO = new int[]{0, 1};
 
   private int[] fractions(int... nums) {
+    if(nums[0] == 0 && nums[2] == 0)
+      return ZERO;
+    if(nums[0] == 0)
+      return new int[]{nums[2], nums[3]};
+    if(nums[2] == 0)
+      return new int[]{nums[0], nums[1]};
     return ZERO;
   }
 
