@@ -8,6 +8,11 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class FractionAdditionShouldBe {
   @Test
   public void theFractionWhenZeroIsAddedToAnyFraction() {
+    assertThat("0/100 + 1/199)", TestData.zeroOver100.plus(TestData.oneOver199),
+        is(TestData.oneOver199));
+
+    assertThat("1/199 + 0/100)", TestData.oneOver199.plus(TestData.zeroOver100),
+        is(TestData.oneOver199));
   }
 
   @Test
