@@ -18,4 +18,10 @@ public class FractionNegationShouldBe {
     assertThat("10/-11 = -(10/11)", new Fraction(10, -11),
         is(equalTo(new Fraction(10,11).negate())));
   }
+
+  @Test
+  public void positiveWhenBothNumeratorAndDenominatorAreNegative() {
+    assertThat("-10/-11 = 10/11", new Fraction(-10, -11),
+        is(equalTo(new Fraction(10,11))));
+  }
 }

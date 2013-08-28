@@ -28,5 +28,13 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" assert-keyword="true" jdk-15="true" project-jdk-name="1.8 Build b100 https://jdk8.java.net/download.html " project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
+  <component name="TestDoxConfiguration">
+    <option name="createTestIfMissing" value="true" />
+    <option name="deletePackageOccurrences" value="true" />
+    <option name="testMethodAnnotation" value="@Test" />
+    <option name="testMethodPrefix" />
+    <option name="testNameTemplate" value="&lt;classname&gt;" />
+    <option name="usingAnnotations" value="true" />
+  </component>
 </project>
 
