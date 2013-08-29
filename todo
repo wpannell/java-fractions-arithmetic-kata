@@ -26,7 +26,7 @@ subtraction:
 *-i/n - -j/m = ((-i*m) - (-j*n))/(n*m)
 
 multiplication:
-0/n * 0/m = 0
+*0/n * 0/m = 0
 i/n * m/m = i/n
 i/n * j/m = (i*j) / (n*m)
 -i/n * -j/m = (i*j) / (n*m)
