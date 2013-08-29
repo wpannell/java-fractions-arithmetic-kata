@@ -17,4 +17,11 @@ public class FractionDivisionShouldBe {
         new Fraction(6, 12).dividedBy(new Fraction(30, 30)),
         is(new Fraction(1, 2)));
   }
+
+  @Test()
+  public void invertedAndMultiplied() {
+    assertThat("7/13 / 17/5)",
+        new Fraction(7, 13).dividedBy(new Fraction(17, 5)),
+        is(new Fraction(35, 221)));
+  }
 }
