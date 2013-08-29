@@ -15,7 +15,7 @@ public class Fraction {
   }
 
   public Fraction minus(final Fraction fraction) {
-    return null;
+    return this.plus(fraction.negate());
   }
 
   public Fraction negate() {
