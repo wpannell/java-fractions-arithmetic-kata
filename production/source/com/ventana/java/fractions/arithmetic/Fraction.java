@@ -29,11 +29,6 @@ public class Fraction {
   }
 
   @Override
-  public String toString() {
-    return numerator + " / " + denominator ;
-  }
-
-  @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
@@ -46,12 +41,18 @@ public class Fraction {
     return true;
   }
 
+  @Override
+  public String toString() {
+    return numerator + " / " + denominator ;
+  }
+
   private int[] normalize(final int numerator, final int denominator) {
     if(numerator == 0) return new int[]{0,1};
-    if(numerator < 0 &&  denominator < 0) return new int[]{-numerator,
-        -denominator};
-    if(denominator < 0)
-      return new int[]{-numerator, -denominator};
+
+    if(numerator < 0 &&  denominator < 0)
+        return new int[]{-numerator, -denominator};
+
+    if(denominator < 0) return new int[]{-numerator, -denominator};
     return new int[]{numerator, denominator};
   }
 
