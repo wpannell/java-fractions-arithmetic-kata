@@ -15,6 +15,7 @@ public class Fraction {
   }
 
   public Fraction divide(Fraction fraction) {
+    if(fraction.numerator == 0) throw new ArithmeticException("DivideByZero");
     return null;
   }
 

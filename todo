@@ -34,7 +34,7 @@ multiplication:
 *i/n * j/-m = (-i*j) / (n*m)
 
 division:
-0/n / 0/m = exception
+*i/n / 0/m = exception
 i/n / m/m = i/n
 i/n / j/n = i/n * n/j = i/j
 i/n / j/m = (i/n) * (m/j) = (i*j) / (m*n)
