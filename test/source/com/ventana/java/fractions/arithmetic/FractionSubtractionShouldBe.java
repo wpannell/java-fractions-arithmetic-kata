@@ -12,4 +12,11 @@ public class FractionSubtractionShouldBe {
         TestData.oneOver199.minus(TestData.zeroOver100),
         is(TestData.oneOver199));
   }
+
+  @Test
+  public void theNegationWhenAFractionIsSubtractedFromZero() {
+    assertThat("0/100 - 1/199)",
+        TestData.zeroOver100.minus(TestData.oneOver199),
+        is(new Fraction(-1,199)));
+  }
 }
