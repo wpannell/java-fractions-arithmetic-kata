@@ -18,20 +18,12 @@ negation:
 *-(i/-n) = i/n
 
 subtraction:
-i/n + -j/n = i-j/n
-i/n + j/-n = i-j/n
+*0/n - i/m = -i/m
+*i/m - 0/n = i/m
 
--i/n + j/n = j-i/n
-i/-n + j/n = j-i/n
-
--i/n + -j/n = -i-j/n
--i/-n + -j/-n = i+j/n
-
-i/n + j/-n = i-j/n
-
-i/n + -j/m = (i*m) + (-j*n)/(n*m)
--i/n + j/m = (-i*m) + (j*n)/(n*m)
--i/n + -j/m = (-i*m) + (-j*n)/(n*m)
+*i/n - j/m = ((i*m) - (j*n))/(n*m)
+*-i/n - j/m = ((-i*m) - (j*n))/(n*m)
+*-i/n - -j/m = ((-i*m) - (-j*n))/(n*m)
 
 multiplication:
 0/n * 0/m = 0

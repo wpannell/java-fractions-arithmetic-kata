@@ -28,7 +28,7 @@ public class FractionAdditionShouldBe {
   }
 
   @Test
-  public void crossMultipliedWhenTheDenominatorsAreUnequal() {
+  public void crossMultipliedAndAddedWhenTheDenominatorsAreUnequal() {
     assertThat("4/7 + 11/13)", TestData.fourOver7.plus(TestData.elevenOver13),
         is(TestData.oneTwentyNineOver91));
 
