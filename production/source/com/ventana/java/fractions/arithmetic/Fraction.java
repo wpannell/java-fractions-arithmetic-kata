@@ -14,7 +14,7 @@ public class Fraction {
     this.denominatorNorm = normalize(numerator,denominator)[1];
   }
 
-  public Fraction divide(Fraction fraction) {
+  public Fraction dividedBy(Fraction fraction) {
     if(fraction.numerator == 0) throw new ArithmeticException("DivideByZero");
     return null;
   }
