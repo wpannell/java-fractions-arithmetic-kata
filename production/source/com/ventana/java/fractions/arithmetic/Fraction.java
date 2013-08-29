@@ -16,7 +16,7 @@ public class Fraction {
 
   public Fraction dividedBy(Fraction fraction) {
     if(fraction.numerator == 0) throw new ArithmeticException("DivideByZero");
-    return null;
+    return reduce(this);
   }
 
   public Fraction minus(final Fraction fraction) {
