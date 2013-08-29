@@ -14,6 +14,10 @@ public class Fraction {
     this.denominatorNorm = normalize(numerator,denominator)[1];
   }
 
+  public Fraction negate() {
+    return new Fraction(-numeratorNorm, denominatorNorm);
+  }
+
   public Fraction plus(final Fraction fraction) {
     if(fraction.numerator == 0) return reduce(this);
     if(numerator == 0) return reduce(fraction);
