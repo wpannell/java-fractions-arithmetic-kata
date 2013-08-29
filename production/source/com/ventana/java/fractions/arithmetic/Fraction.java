@@ -33,8 +33,8 @@ public class Fraction {
   }
 
   public Fraction times(Fraction fraction) {
-    return new Fraction(numeratorNorm *fraction.numeratorNorm,
-        denominatorNorm*fraction.denominatorNorm);
+    return reduce(new Fraction(numeratorNorm *fraction.numeratorNorm,
+        denominatorNorm*fraction.denominatorNorm));
   }
 
   @Override
