@@ -8,6 +8,7 @@ public class Fraction {
   public final int denominatorNorm;
 
   public Fraction(final int numerator, final int denominator) {
+    if(denominator == 0 ) throw new RuntimeException("undefined fraction");
     this.numerator = numerator;
     this.denominator = denominator;
     this.numeratorNorm = normalize(numerator,denominator)[0];
