@@ -36,4 +36,10 @@ public class FractionNegationShouldBe {
     assertThat("-(7/11) = -7/11", new Fraction(7, 11).negate(),
         is(equalTo(new Fraction(-7, 11))));
   }
+
+  @Test
+  public void positiveWhenANegativeFractionIsNegated() {
+    assertThat("-(-7/11) = -7/11", new Fraction(-7, 11).negate(),
+        is(equalTo(new Fraction(7, 11))));
+  }
 }
