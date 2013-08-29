@@ -13,14 +13,14 @@ public class FractionDivisionShouldBe {
 
   @Test()
   public void theFractionWhenDividedByTheIdentity() {
-    assertThat("7/13 / 30/30)",
+    assertThat("6/12 / 30/30 = 1/2)",
         new Fraction(6, 12).dividedBy(new Fraction(30, 30)),
         is(new Fraction(1, 2)));
   }
 
   @Test()
   public void invertedAndMultiplied() {
-    assertThat("7/13 / 17/5)",
+    assertThat("7/13 / 17/5 = 35/221)",
         new Fraction(7, 13).dividedBy(new Fraction(17, 5)),
         is(new Fraction(35, 221)));
   }
