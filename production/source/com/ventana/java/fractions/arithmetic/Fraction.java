@@ -32,6 +32,11 @@ public class Fraction {
         (numerator * fraction.denominator) + (fraction.numerator * denominator), denominator * fraction.denominator));
   }
 
+  public Fraction times(Fraction fraction) {
+    return new Fraction(numeratorNorm *fraction.numeratorNorm,
+        denominatorNorm*fraction.denominatorNorm);
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
@@ -65,9 +70,5 @@ public class Fraction {
     final int gcd =
         new GreatestCommonDivisorMethod().gcdOf(fraction.numerator, fraction.denominator);
     return new Fraction(fraction.numerator /gcd, fraction.denominator /gcd);
-  }
-
-  public Fraction times(Fraction fraction) {
-    return null;
   }
 }
