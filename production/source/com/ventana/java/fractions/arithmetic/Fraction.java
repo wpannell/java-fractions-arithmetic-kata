@@ -66,4 +66,8 @@ public class Fraction {
         new GreatestCommonDivisorMethod().gcdOf(fraction.numerator, fraction.denominator);
     return new Fraction(fraction.numerator /gcd, fraction.denominator /gcd);
   }
+
+  public Fraction times(Fraction fraction) {
+    return null;
+  }
 }
