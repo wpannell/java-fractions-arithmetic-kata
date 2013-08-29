@@ -14,7 +14,7 @@ addition(/subtraction use minus everywhere):
 
 *-(0/n) = 0
 *-(i/n) = -i/n
--(-i/n) = i/n
+*-(-i/n) = i/n
 -(i/-n) = i/n
 
 i/n + -j/n = i-j/n
