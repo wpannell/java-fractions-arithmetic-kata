@@ -15,7 +15,7 @@ public class Fraction {
   }
 
   public Fraction dividedBy(Fraction fraction) {
-    if(fraction.numerator == 0) throw new ArithmeticException("DivideByZero");
+    if(fraction.equals(ZERO)) throw new ArithmeticException("DivideByZero");
     return reduce(new Fraction(numeratorNorm * fraction.denominatorNorm,
         denominatorNorm * fraction.numeratorNorm));
   }
@@ -29,13 +29,9 @@ public class Fraction {
   }
 
   public Fraction plus(final Fraction fraction) {
-    if(fraction.numerator == 0) return reduce(this);
-    if(numerator == 0) return reduce(fraction);
-    if(denominator == fraction.denominator)
-      return reduce(new Fraction(numerator + fraction.numerator, denominator));
-
     return reduce(new Fraction(
-        (numerator * fraction.denominator) + (fraction.numerator * denominator), denominator * fraction.denominator));
+        (numerator * fraction.denominator) + (fraction.numerator * denominator),
+        denominator * fraction.denominator));
   }
 
   public Fraction times(Fraction fraction) {
@@ -68,6 +64,7 @@ public class Fraction {
         return new int[]{-numerator, -denominator};
 
     if(denominator < 0) return new int[]{-numerator, -denominator};
+
     return new int[]{numerator, denominator};
   }
 

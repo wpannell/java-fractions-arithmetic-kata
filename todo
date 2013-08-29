@@ -35,11 +35,8 @@ multiplication:
 
 division:
 *i/n / 0/m = exception
-i/n / m/m = i/n
-i/n / j/n = i/n * n/j = i/j
-i/n / j/m = (i/n) * (m/j) = (i*j) / (m*n)
-5/10 * 10/10 = 150/10 = 15/1
-2/5 * 2/10 = 4/5
+*i/n / m/m = i/n
+*i/n / j/m = (i/n) * (m/j) = (i*j) / (m*n)
 
 ______
 *assertion messages
