@@ -30,8 +30,9 @@ multiplication:
 i/n * m/m = i/n
 i/n * j/n = i*j/n
 i/n * j/m = (i*m) * (j*n) / (n*m)
-5/10 * 10/10 = 150/10 = 15/1
-2/5 * 2/10 = 4/5
+-i/n * j/m = (-i*m) * (j*n) / (n*m)
+i/n * -j/m = (i*m) * (-j*n) / (n*m)
+-i/n * -j/m = (i*m) * (j*n) / (n*m)
 
 division:
 0/n / 0/m = exception
