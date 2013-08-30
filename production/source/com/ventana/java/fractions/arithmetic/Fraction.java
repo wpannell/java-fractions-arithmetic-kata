@@ -4,21 +4,17 @@ public class Fraction {
   public static final Fraction ZERO = new Fraction(0,1);
   public final int numerator;
   public final int denominator;
-  public final int numeratorNorm;
-  public final int denominatorNorm;
 
   public Fraction(final int numerator, final int denominator) {
     if(denominator == 0 ) throw new RuntimeException("undefined fraction");
-    this.numerator = numerator;
-    this.denominator = denominator;
-    this.numeratorNorm = normalize(numerator,denominator)[0];
-    this.denominatorNorm = normalize(numerator,denominator)[1];
+    this.numerator = normalize(numerator,denominator)[0];
+    this.denominator = normalize(numerator,denominator)[1];;
   }
 
   public Fraction dividedBy(Fraction fraction) {
     if(fraction.equals(ZERO)) throw new ArithmeticException("DivideByZero");
-    return reduce(new Fraction(numeratorNorm * fraction.denominatorNorm,
-        denominatorNorm * fraction.numeratorNorm));
+    return reduce(new Fraction(numerator * fraction.denominator,
+        denominator * fraction.numerator));
   }
 
   public Fraction minus(final Fraction fraction) {
@@ -26,7 +22,7 @@ public class Fraction {
   }
 
   public Fraction negate() {
-    return new Fraction(-numeratorNorm, denominatorNorm);
+    return new Fraction(-numerator, denominator);
   }
 
   public Fraction plus(final Fraction fraction) {
@@ -36,8 +32,8 @@ public class Fraction {
   }
 
   public Fraction times(Fraction fraction) {
-    return reduce(new Fraction(numeratorNorm *fraction.numeratorNorm,
-        denominatorNorm*fraction.denominatorNorm));
+    return reduce(new Fraction(numerator *fraction.numerator,
+        denominator*fraction.denominator));
   }
 
   @Override
@@ -47,8 +43,8 @@ public class Fraction {
 
     Fraction fraction = (Fraction) o;
 
-    if (denominatorNorm != fraction.denominatorNorm) return false;
-    if (numeratorNorm != fraction.numeratorNorm) return false;
+    if (denominator != fraction.denominator) return false;
+    if (numerator != fraction.numerator) return false;
 
     return true;
   }
@@ -60,12 +56,7 @@ public class Fraction {
 
   private int[] normalize(final int numerator, final int denominator) {
     if(numerator == 0) return new int[]{0,1};
-
-    if(numerator < 0 &&  denominator < 0)
-        return new int[]{-numerator, -denominator};
-
     if(denominator < 0) return new int[]{-numerator, -denominator};
-
     return new int[]{numerator, denominator};
   }
 
